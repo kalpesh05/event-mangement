@@ -61,6 +61,37 @@ const routes = [
     path: "/user-profile-extra-fields",
     handler: "UserController.extraFieldUpdate",
     authenticate: true
+  },
+  // event
+  {
+    method: "GET",
+    path: "/events",
+    handler: "EventController.getAll",
+    authenticate: true
+  },
+  {
+    method: "GET",
+    path: "/events",
+    handler: "EventController.getAll",
+    authenticate: true
+  },
+  {
+    method: "GET",
+    path: "/events/:event_id",
+    handler: "EventController.getOne",
+    authenticate: true
+  },
+  {
+    method: "PUT",
+    path: "/events/:event_id",
+    handler: "EventController.update",
+    authenticate: true
+  },
+  {
+    method: "POST",
+    path: "/events",
+    handler: "EventController.create",
+    authenticate: true
   }
 ];
 

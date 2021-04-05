@@ -1,2 +1,2 @@
 exports.authValidators = require("./authValidators");
-exports.transactionValidators = require("./transactionValidator");
+exports.userValidator = require("./userValidators");

@@ -10,13 +10,13 @@ exports.updateProfile = Joi.object().keys({
     .min(1)
     .max(15)
     .error(new Error(errorMessages.LAST_NAME)),
-  avatar_image_url: Joi.string()
+  image_url: Joi.string()
     .min(1)
     .error(new Error(errorMessages.PROFILE_IMAGE_URL)),
   linkedIn_url: Joi.string()
     .min(1)
     .error(new Error(errorMessages.LINKED_IN_URL)),
-  address: Joi.object().error(new Error(errorMessages.ADDRESS)),
+  location: Joi.object().error(new Error(errorMessages.LOCATION)),
   primary_phone: Joi.string()
     .min(1)
     .error(new Error(errorMessages.PRIMARY_PHONE)),
@@ -54,7 +54,9 @@ exports.extraFieldCreate = Joi.object().keys({
 });
 
 exports.extraFieldUpdate = Joi.object().keys({
-  heading: Joi.string().error(new Error(errorMessages.USER_EXTRA_FIELD_HEADING)),
+  heading: Joi.string().error(
+    new Error(errorMessages.USER_EXTRA_FIELD_HEADING)
+  ),
   body: Joi.string().error(new Error(errorMessages.USER_EXTRA_FIELD_BODY)),
   index: Joi.number().error(new Error(errorMessages.USER_EXTRA_FIELD_INDEX))
 });
